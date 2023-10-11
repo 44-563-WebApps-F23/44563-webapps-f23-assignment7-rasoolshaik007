@@ -136,9 +136,9 @@
 
             console.log("triggered");
             let col = treasureLocation % 5;
-            let row = Math.floor((treasureLocation - 1) / 5);
+            let row = Math.floor((treasureLocation) / 5);
             let col1 = lastCheck % 5;
-            let row1 = Math.floor((lastCheck - 1) / 5);
+            let row1 = Math.floor((lastCheck) / 5);
 
             let rowDiff = Math.abs(row - row1);
             let colDiff = Math.abs(col - col1);
