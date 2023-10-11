@@ -3,13 +3,13 @@
     <head> 
         <title>Items Merging</title>
         <style>
-            .flex-container {
+            .flex {
                 display: flex;  
                 flex-direction:row;
                 background-color: red;
             }
 
-            .flex-container > div {  /*div children of the flex container*/
+            .flex > div {  /*div children of the flex container*/
                 background-color: #f1f1f1; 
                 margin: 10px;  
                 padding: 20px;  
@@ -18,7 +18,7 @@
 
             /* Responsive layout */
             @media (max-width: 600px) { 
-	            .flex-container{
+	            .flex{
 		            flex-direction:column;
 		            background-color: green;
 	            }
@@ -27,27 +27,30 @@
     </head>
     <body>
         <h2>Khaja Nayab Rasool Shaik builds a merger</h2>
-		<div class="flex-container" id="target">
+		<div class="flex" id="target">
 		  <div>row item 1</div>   
 		  <div>row item 2</div>  
 		  <div>row item 3</div>  
 		</div>
 	
-        <input type="text" id="txt" value="Enter text">
+        <input type="text" id="txt" value="Enter Text Element">
+        <p>Press the button to add elements in the end</p>
         <button onclick="addEnd()">Add end</button>
+        <p>Press the button to remove the element</p>
         <button onclick="remove()">Remove</button>
+        <p>Press the button to add elements in the front</p>
         <button onclick="addFront()">Add front</button>
         
     </body>
     <script>
-        
+
 	    function addEnd() {
             text = document.getElementById("txt").value;
             out = document.createElement("div");
             out.innerHTML = text;
             out.className = "merger";
-            container = document.getElementById("target");
-            container.appendChild(out);
+            flex = document.getElementById("target");
+            flex.appendChild(out);
         }
 
         function remove(){
@@ -65,9 +68,9 @@
             out = document.createElement("div");
             out.innerHTML = text;
             out.className = "merger";
-            container = document.getElementById("target");
-            firstChild = container.firstChild;
-            container.insertBefore(out, firstChild);
+            flex = document.getElementById("target");
+            firstChild = flex.firstChild;
+            flex.insertBefore(out, firstChild);
         }
     </script>
 </html>	
