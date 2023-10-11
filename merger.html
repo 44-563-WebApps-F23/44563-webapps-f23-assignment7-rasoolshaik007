@@ -35,9 +35,12 @@
 	
         <input type="text" id="txt" value="Enter text">
         <button onclick="addEnd()">Add end</button>
-           
-	</body>
+        <button onclick="remove()">Remove</button>
+        <button onclick="addFront()">Add front</button>
+        
+    </body>
     <script>
+        
 	    function addEnd() {
             text = document.getElementById("txt").value;
             out = document.createElement("div");
@@ -45,6 +48,26 @@
             out.className = "merger";
             container = document.getElementById("target");
             container.appendChild(out);
+        }
+
+        function remove(){
+            mergerItems = document.getElementsByClassName("merger");
+            length = mergerItems.length;
+
+            if (length > 0) {
+                middleItem = Math.floor(length/2);
+                mergerItems[middleItem].remove();
+            }
+        }
+
+        function addFront() {
+            text = document.getElementById("txt").value;
+            out = document.createElement("div");
+            out.innerHTML = text;
+            out.className = "merger";
+            container = document.getElementById("target");
+            firstChild = container.firstChild;
+            container.insertBefore(out, firstChild);
         }
     </script>
 </html>	
